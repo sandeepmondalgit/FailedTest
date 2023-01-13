@@ -48,8 +48,3 @@ steps:
   condition: succeededOrFailed()
 
 - task: agent-screenshot@1
-
-
-- task: PublishTestResultScreenshot@0
-  inputs:
-    organization: '(dev.azure.com/{sandeepamondal})'
