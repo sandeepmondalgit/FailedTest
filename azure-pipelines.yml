@@ -48,4 +48,4 @@ steps:
   condition: succeededOrFailed()
 
 - task: agent-screenshot@1
-  condition: succeededOrFailed()
+  condition: always()
