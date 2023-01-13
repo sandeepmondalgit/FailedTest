@@ -48,7 +48,7 @@ steps:
   condition: succeededOrFailed()
 
 - task: agent-screenshot@1
-  condition: or(canceled(), failed())
+
 
 - task: PublishTestResultScreenshot@0
   inputs:
