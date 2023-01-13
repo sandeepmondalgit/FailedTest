@@ -50,15 +50,3 @@ steps:
 - task: agent-screenshot@1
   condition: always()
 
-
-- task: EmailReport@1
-  inputs:
-    sendMailConditionConfig: 'Always'
-    subject: '[{environmentStatus}] {passPercentage} tests passed in $(Release.EnvironmentName) stage for $(Build.BuildNumber)'
-    toAddress: 'sandeep.a.mondal@capgemini.com'
-    defaultDomain: 'microsoft.com'
-    groupTestResultsBy: 'run'
-    includeCommits: true
-    maxTestFailuresToShow: '15'
-    includeOthersInTotal: false
-    usePreviousEnvironment: false
