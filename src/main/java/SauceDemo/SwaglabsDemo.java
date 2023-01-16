@@ -1,8 +1,11 @@
 package SauceDemo;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
+import java.io.File;
+import java.io.IOException;
 
 public class SwaglabsDemo {
     static WebDriver driver;
@@ -13,6 +16,11 @@ public class SwaglabsDemo {
 //        Thread.sleep(3000);
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/");
+         driver.manage().window().maximize();
+        driver.get("https://www.saucedemo.com/");
+        TakesScreenshot ts=(TakesScreenshot)driver;
+        File file= ts.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(file, new File("./Screen/Homepage.png"));
     }
 
     public void login() {
@@ -21,6 +29,11 @@ public class SwaglabsDemo {
         driver.findElement(By.id("password")).click();
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
+         driver.manage().window().maximize();
+        driver.get("https://www.saucedemo.com/");
+        TakesScreenshot ts=(TakesScreenshot)driver;
+        File file= ts.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(file, new File("./Screen/login.png"));
 
     }
 
